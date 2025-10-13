@@ -29,7 +29,8 @@ To run the components locally, the following instructions are given:
    http://localhost:6006
 
 5. Build Storybook to build a static version of Storybook to serve via Docker.
-   ```npm run build-storybook
+   ```bash
+   npm run build-storybook
 
 ## Docker Instructions
 To containerize the project, the following instructions are given:
