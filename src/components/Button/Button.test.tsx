@@ -10,7 +10,7 @@ test('Button is visible', () => {
 
 test('Button changes background color when disabled', () => {
   render(<Button label="Disabled" disabled />);
-  const button = screen.getByText('Disabled')
+  const button = screen.getByText('Disabled');
   expect(button).toHaveStyle('background-color: #ccc');
   expect(button).toBeDisabled();
 });
