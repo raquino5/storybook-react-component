@@ -1,9 +1,9 @@
-import React from "react";
-import styled, { css } from "styled-components";
-import type { TableFooterProps } from "./TableFooter.types";
+import React from 'react';
+import styled, { css } from 'styled-components';
+import type { TableFooterProps } from './TableFooter.types';
 
 const StyledFooter = styled.tfoot<{ disabled?: boolean; backgroundColor?: string }>`
-  background-color: ${({ backgroundColor }) => backgroundColor || "#f5f5f5"};
+  background-color: ${({ backgroundColor }) => backgroundColor || '#f5f5f5'};
   text-align: left;
   font-weight: bold;
   padding: 0.75rem 1rem;
@@ -31,14 +31,10 @@ const StyledFooter = styled.tfoot<{ disabled?: boolean; backgroundColor?: string
 export const TableFooter: React.FC<TableFooterProps> = ({
   text,
   disabled = false,
-  backgroundColor = "#f5f5f5",
+  backgroundColor = '#f5f5f5',
 }) => {
   return (
-    <StyledFooter
-      disabled={disabled}
-      backgroundColor={backgroundColor}
-      data-testid="table-footer"
-    >
+    <StyledFooter disabled={disabled} backgroundColor={backgroundColor} data-testid="table-footer">
       <tr>
         <td colSpan={100}>{text}</td>
       </tr>

@@ -1,20 +1,20 @@
-import React from "react";
-import styled from "styled-components";
-import type { RadioButtonProps } from "./RadioButton.types";
+import React from 'react';
+import styled from 'styled-components';
+import type { RadioButtonProps } from './RadioButton.types';
 
 const StyledLabel = styled.label<{ disabled?: boolean; backgroundColor?: string }>`
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 8px 12px;
-  background-color: ${({ backgroundColor }) => backgroundColor || "#f0f0f0"};
+  background-color: ${({ backgroundColor }) => backgroundColor || '#f0f0f0'};
   border-radius: 6px;
-  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
   transition: background-color 0.3s ease;
 
   input {
-    cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
+    cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   }
 
   @media (max-width: 600px) {

@@ -1,9 +1,9 @@
-import React from "react";
-import styled, { css } from "styled-components";
-import type { TableHeaderProps } from "./TableHeader.types";
+import React from 'react';
+import styled, { css } from 'styled-components';
+import type { TableHeaderProps } from './TableHeader.types';
 
 const StyledHeader = styled.th<{ disabled?: boolean; backgroundColor?: string }>`
-  background-color: ${({ backgroundColor }) => backgroundColor || "#f5f5f5"};
+  background-color: ${({ backgroundColor }) => backgroundColor || '#f5f5f5'};
   padding: 0.75rem 1rem;
   text-align: left;
   font-weight: bold;
@@ -25,14 +25,10 @@ const StyledHeader = styled.th<{ disabled?: boolean; backgroundColor?: string }>
 export const TableHeader: React.FC<TableHeaderProps> = ({
   text,
   disabled = false,
-  backgroundColor = "#f5f5f5",
+  backgroundColor = '#f5f5f5',
 }) => {
   return (
-    <StyledHeader
-      disabled={disabled}
-      backgroundColor={backgroundColor}
-      data-testid="table-header"
-    >
+    <StyledHeader disabled={disabled} backgroundColor={backgroundColor} data-testid="table-header">
       {text}
     </StyledHeader>
   );

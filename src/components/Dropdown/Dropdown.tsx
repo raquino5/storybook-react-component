@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { DropdownProps } from "./Dropdown.types";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { DropdownProps } from './Dropdown.types';
 
 const Select = styled.select<{ backgroundColor?: string; disabled?: boolean }>`
   padding: 0.5rem 1rem;
@@ -8,9 +8,9 @@ const Select = styled.select<{ backgroundColor?: string; disabled?: boolean }>`
   border: 1px solid #ccc;
   font-size: 1rem;
   background-color: ${({ backgroundColor, disabled }) =>
-    disabled ? "#e0e0e0" : backgroundColor || "#fff"};
-  color: ${({ disabled }) => (disabled ? "#888" : "#000")};
-  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
+    disabled ? '#e0e0e0' : backgroundColor || '#fff'};
+  color: ${({ disabled }) => (disabled ? '#888' : '#000')};
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
 `;
 
 export const Dropdown: React.FC<DropdownProps> = ({
@@ -21,7 +21,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
   onChange,
 }) => {
   const [selected, setSelected] = useState<string | number>(
-    defaultValue || (options.length > 0 ? options[0].value : "")
+    defaultValue || (options.length > 0 ? options[0].value : ''),
   );
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {

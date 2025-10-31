@@ -1,6 +1,6 @@
-import React from "react";
-import styled, { css } from "styled-components";
-import type { TableProps } from "./Table.types";
+import React from 'react';
+import styled, { css } from 'styled-components';
+import type { TableProps } from './Table.types';
 
 const StyledTableWrapper = styled.div<{ disabled?: boolean; backgroundColor?: string }>`
   width: 100%;
@@ -45,7 +45,7 @@ export const Table: React.FC<TableProps> = ({
   headers,
   data,
   disabled = false,
-  backgroundColor = "#ffffff",
+  backgroundColor = '#ffffff',
 }) => {
   return (
     <StyledTableWrapper

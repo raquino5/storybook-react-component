@@ -18,11 +18,17 @@
     "yaml": "2.8.1"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,json,css,md}": [
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix --max-warnings=0"
+    ],
+    "*.{json,css,md,mdx,html,yml,yaml}": [
       "prettier --write"
     ],
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --max-warnings=0"
+    ".prettierrc": [
+      "prettier --write"
+    ],
+    ".github/workflows/*.{yml,yaml}": [
+      "prettier --write"
     ]
   },
   "scripts": {
@@ -33,11 +39,11 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "prepare": "husky",
-    "test:ci": "cross-env CI=true react-scripts test --bail --watchAll=false --coverage",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --max-warnings=0",
+    "test:ci": "react-scripts test --watchAll=false --bail --ci",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx --max-warnings=0",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "precommit:run": "npm run format:check && npm run lint && npm run test:related",
+    "precommit:run": "npm run format:check && npm run lint && npm run test:ci",
     "test:related": "react-scripts test --bail --findRelatedTests"
   },
   "eslintConfig": {
@@ -70,6 +76,7 @@
     "eslint-plugin-storybook": "^9.1.10",
     "husky": "^9.1.7",
     "jest": "^27.5.1",
+    "jest-styled-components": "^7.2.0",
     "lint-staged": "^16.2.6",
     "prettier": "^3.6.2",
     "prop-types": "^15.8.1",

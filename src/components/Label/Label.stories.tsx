@@ -4,9 +4,9 @@ import { Label } from './Label';
 const meta = {
   component: Label,
   argTypes: {
-    text: { control: "text" },
-    disabled: { control: "boolean" },
-    backgroundColor: { control: "color" },
+    text: { control: 'text' },
+    disabled: { control: 'boolean' },
+    backgroundColor: { control: 'color' },
   },
 } satisfies Meta<typeof Label>;
 
@@ -16,15 +16,15 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    text: "Hello World",
+    text: 'Hello World',
     disabled: false,
-    backgroundColor: "#588998"
+    backgroundColor: '#588998',
   },
 };
 
 export const Disabled: Story = {
   args: {
-    text: "Disabled Label",
+    text: 'Disabled Label',
     disabled: true,
   },
 };

@@ -1,9 +1,9 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
-import "@testing-library/jest-dom";
-import { TableCell } from "./TableCell";
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import { TableCell } from './TableCell';
 
-test("renders TableCell and is visible", () => {
+test('renders TableCell and is visible', () => {
   render(
     <table>
       <tbody>
@@ -11,13 +11,13 @@ test("renders TableCell and is visible", () => {
           <TableCell text="Hello" />
         </tr>
       </tbody>
-    </table>
+    </table>,
   );
-  const cell = screen.getByTestId("table-cell");
+  const cell = screen.getByTestId('table-cell');
   expect(cell).toBeVisible();
 });
 
-test("applies disabled state styles", () => {
+test('applies disabled state styles', () => {
   render(
     <table>
       <tbody>
@@ -25,9 +25,9 @@ test("applies disabled state styles", () => {
           <TableCell text="Hello" disabled backgroundColor="#cccccc" />
         </tr>
       </tbody>
-    </table>
+    </table>,
   );
-  const cell = screen.getByTestId("table-cell");
-  expect(cell).toHaveStyle("opacity: 0.5");
-  expect(cell).toHaveStyle("background-color: #cccccc");
+  const cell = screen.getByTestId('table-cell');
+  expect(cell).toHaveStyle('opacity: 0.5');
+  expect(cell).toHaveStyle('background-color: #cccccc');
 });

@@ -15,14 +15,13 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-
 export const Default: Story = {
   args: {
     label: 'Option A',
     name: 'example',
     value: 'a',
     disabled: false,
-    backgroundColor: "#588998",
+    backgroundColor: '#588998',
   },
 };
 
