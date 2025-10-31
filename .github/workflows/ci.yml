@@ -32,5 +32,8 @@ jobs:
       - name: Tests (CI)
         run: npm run test:ci
 
-      - name: Build (production)
+      - name: Build Storybook
+        run: npm run build-storybook
+
+      - name: Build CRA (production)
         run: npm run build
