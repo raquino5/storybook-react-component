@@ -1,0 +1,3 @@
+echo "Pre-commit checks running (prettier/eslint/tests)..."
+npx lint-staged || exit 1
+npm run precommit:run || exit 1
