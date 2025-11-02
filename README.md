@@ -12,6 +12,18 @@ This project is a React-based UI Component Library built using Storybook and Sty
 - Husky pre-commit checks (Prettier / ESLint / Tests)
 - GitHub Actions continuous-integration workflow
 
+## Continuous Integration (GitHub Actions)
+
+A workflow file .github/workflows/ci.yml ensures that the same checks run on every push or pull request.
+CI steps:
+
+- Install dependencies
+- Run Prettier check
+- Run ESLint
+- Run Jest tests (npm run test:ci)
+- Build production app (npm run build)
+  If any step fails, GitHub marks the build as failed.
+
 ## Setup Instructions
 
 To run the components locally, the following instructions are given:
@@ -38,9 +50,9 @@ To run the components locally, the following instructions are given:
 
    ```
 
-4. Open your browser to see the Create React App and go to:
+4. Open your browser to see the Create React App locally and go to:
 
-   http://127.0.0.1:8018
+   http://localhost:6006
 
 ## Docker Instructions
 
