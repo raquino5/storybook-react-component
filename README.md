@@ -22,7 +22,8 @@ CI steps:
 - Run ESLint
 - Run Jest tests (npm run test:ci)
 - Build production app (npm run build)
-  If any step fails, GitHub marks the build as failed.
+
+If any step fails, GitHub marks the build as failed.
 
 ## Setup Instructions
 
