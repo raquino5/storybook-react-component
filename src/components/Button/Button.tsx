@@ -10,7 +10,7 @@ const StyledButton = styled.button<{ disabled?: boolean; backgroundColor?: strin
   padding: 10px 16px;
   cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
   font-size: 1rem;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease
 
   &:hover {
     background-color: ${(props) =>
