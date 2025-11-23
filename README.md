@@ -1,29 +1,29 @@
-# RAquino Coding Assignment 12: Web Component Library
+# RAquino Coding Assignment 14: Portfolio Website (with UI Component Library)
 
 ## Overview
 
-This project is a React-based UI Component Library built using Storybook and Styled Components. It involves the creation of Component Library using React and Storybook. Additionally the project extends with enhancements in which code quality check has been added to build process using Husky pre-commit hooks that automatically runs Prettier formatting checks, EsLint linting check, and Jest unit tests. And, GitHub Actions CI that runs the same checks on every push or pull requests.
+This project builds on the previous assignments and uses the UI Garden component library to create a full React Portfolio Website. The portfolio highlights program coursework, provides developer setup documentation, and showcases reusable UI components built in earlier assignments (A12 & A13).
 
-## Features
+## Portfolio Website (Assignment 14 )
 
-- Fully responsive components
-- Storybook playground with interactive controls
-- Jest unit tests for each component
-- Husky pre-commit checks (Prettier / ESLint / Tests)
-- GitHub Actions continuous-integration workflow
+- Basic Information section
+- Work / Projects section (title, description, image, link, tech list)
+- Skills section (languages, tools, frameworks)
+- Resources section (title, icon/image, summary, links)
+- Developer Setup section (VS Code setup, terminal setup, fonts, tools)
 
-## Continuous Integration (GitHub Actions)
+## UI Component Library (Assignment 12)
 
-A workflow file .github/workflows/ci.yml ensures that the same checks run on every push or pull request.
-CI steps:
+- Reusable components: Button, Card, Dropdown, HeroImage, Img, Label, RadioButton, Table, TableHeader, TableRow, TableCell, TableFooter, & Text
+- All portfolio sections were bult using these components
 
-- Install dependencies
-- Run Prettier check
-- Run ESLint
-- Run Jest tests (npm run test:ci)
-- Build production app (npm run build)
+## Code Quality & Automation (Assignment 13)
 
-If any step fails, GitHub marks the build as failed.
+- Husky pre-commit hooks
+- Prettier formatting enforcement
+- ESLint linting
+- Jest tests
+- GitHub Actions CI workflow
 
 ## Setup Instructions
 
@@ -44,10 +44,10 @@ To run the components locally, the following instructions are given:
 
    ```
 
-3. Run Storybook to interact to components locally.
+3. Start development server using:
 
    ```bash
-   npm run storybook
+   http://localhost:3000
 
    ```
 
@@ -55,27 +55,37 @@ To run the components locally, the following instructions are given:
 
    http://localhost:6006
 
-## Docker Instructions
+## Docker Instructions for (Assignment 14)
 
 To containerize the project, the following instructions are given:
 
-1. Build Docker Image Image
+1. The portfolio must run in a container at localhost:5575, with a working directory named:
 
    ```bash
-   docker build -t aquino_ralph_coding_assignment13 .
+   lastName_firstName_final_site
 
    ```
 
-2. Run Docker Container
+2. Build Docker Image:
 
    ```bash
-   docker run -d -p 8018:8018 --name aquino_ralph_coding_assignment13 aquino_ralph_coding_assignment13
+   docker build -t aquino_ralph_coding_assignment14 .
 
    ```
 
-3. Access the site using:
+3. Run Container:
 
-   http://127.0.0.1:8018
+   ```bash
+   docker run -d -p 5575:5575 --name aquino_ralph_coding_assignment14_container aquino_ralph_coding_assignment14
+
+   ```
+
+4. Access the site
+
+   ```bash
+   http://127.0.0.1:5575
+
+   ```
 
 ## Code Quality and Pre-Commit Checks
 
@@ -93,5 +103,3 @@ npm run format:check
 npm run lint
 npm run test:ci
 ```
-
-try
