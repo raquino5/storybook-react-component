@@ -2,8 +2,8 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import type { TableCellProps } from './TableCell.types';
 
-const StyledCell = styled.td<{ disabled?: boolean; backgroundColor?: string }>`
-  background-color: ${({ backgroundColor }) => backgroundColor || '#ffffff'};
+const StyledCell = styled.td<{ disabled?: boolean; $backgroundColor?: string }>`
+  background-color: ${({ $backgroundColor }) => $backgroundColor || '#ffffff'};
   padding: 0.5rem;
   border: 1px solid #ccc;
   text-align: left;
@@ -28,7 +28,7 @@ export const TableCell: React.FC<TableCellProps> = ({
   backgroundColor = '#ffffff',
 }) => {
   return (
-    <StyledCell disabled={disabled} backgroundColor={backgroundColor} data-testid="table-cell">
+    <StyledCell disabled={disabled} $backgroundColor={backgroundColor} data-testid="table-cell">
       {text}
     </StyledCell>
   );

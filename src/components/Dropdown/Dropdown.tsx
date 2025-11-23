@@ -11,12 +11,10 @@ const Select = styled.select<{ backgroundColor?: string; disabled?: boolean }>`
   text-transform: uppercase;
 
   background-color: ${({ backgroundColor, disabled }) =>
-    disabled
-      ? "rgba(51, 65, 85, 0.85)"
-      : backgroundColor || "rgba(15, 23, 42, 0.95)"};
+    disabled ? 'rgba(51, 65, 85, 0.85)' : backgroundColor || 'rgba(15, 23, 42, 0.95)'};
 
-  color: ${({ disabled }) => (disabled ? "#9ca3af" : "#e5e7eb")};
-  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
+  color: ${({ disabled }) => (disabled ? '#9ca3af' : '#e5e7eb')};
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
 
   box-shadow: 0 12px 24px rgba(15, 23, 42, 0.9);
   outline: none;

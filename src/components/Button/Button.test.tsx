@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Button } from './Button';
 
@@ -8,9 +8,11 @@ test('Button is visible', () => {
   expect(screen.getByText('Test')).toBeVisible();
 });
 
-test('Button changes background color when disabled', () => {
-  render(<Button label="Disabled" disabled />);
-  const button = screen.getByText('Disabled');
-  expect(button).toHaveStyle('background-color: #ccc');
+test('Button does not trigger onClick when disabled', () => {
+  const handleClick = jest.fn();
+  render(<Button label="Disabled" disabled onClick={handleClick} />);
+  const button = screen.getByRole('button', { name: /disabled/i });
   expect(button).toBeDisabled();
+  fireEvent.click(button);
+  expect(handleClick).not.toHaveBeenCalled();
 });

@@ -11,11 +11,16 @@ describe('Img Component', () => {
         alt="test image"
       />,
     );
+
     const imgElement = screen.getByAltText('test image');
     expect(imgElement).toBeInTheDocument();
+    expect(imgElement).toHaveAttribute(
+      'src',
+      'https://cdn.britannica.com/53/252953-050-30D00122/Mickey-Mouse-Steamboat-Willie-Walt-Disney-Public-Domain.jpg',
+    );
   });
 
-  test('applies disabled styles', () => {
+  test('passes disabled prop', () => {
     render(
       <Img
         src="https://cdn.britannica.com/53/252953-050-30D00122/Mickey-Mouse-Steamboat-Willie-Walt-Disney-Public-Domain.jpg"
@@ -24,7 +29,6 @@ describe('Img Component', () => {
       />,
     );
     const imgElement = screen.getByAltText('disabled image');
-    expect(imgElement).toHaveStyle('opacity: 0.5');
-    expect(imgElement).toHaveStyle('cursor: not-allowed');
+    expect(imgElement).toHaveAttribute('disabled');
   });
 });

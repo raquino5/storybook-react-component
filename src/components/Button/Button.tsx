@@ -22,8 +22,7 @@ const StyledButton = styled.button<{ disabled?: boolean; backgroundColor?: strin
   background: ${(props) =>
     props.disabled
       ? 'rgba(51, 65, 85, 0.85)'
-      : props.backgroundColor ||
-        'linear-gradient(135deg, #22c55e, #22d3ee, #6366f1)'};
+      : props.backgroundColor || 'linear-gradient(135deg, #22c55e, #22d3ee, #6366f1)'};
 
   box-shadow: 0 14px 30px rgba(15, 23, 42, 0.9);
 
@@ -35,9 +34,7 @@ const StyledButton = styled.button<{ disabled?: boolean; backgroundColor?: strin
   &:hover {
     transform: ${(props) => (props.disabled ? 'none' : 'translateY(-1px) scale(1.01)')};
     box-shadow: ${(props) =>
-      props.disabled
-        ? '0 10px 24px rgba(15, 23, 42, 0.7)'
-        : '0 20px 40px rgba(15, 23, 42, 1)'};
+      props.disabled ? '0 10px 24px rgba(15, 23, 42, 0.7)' : '0 20px 40px rgba(15, 23, 42, 1)'};
     filter: ${(props) => (props.disabled ? 'none' : 'brightness(1.05)')};
   }
 

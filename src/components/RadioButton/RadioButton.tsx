@@ -2,12 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import type { RadioButtonProps } from './RadioButton.types';
 
-const StyledLabel = styled.label<{ disabled?: boolean; backgroundColor?: string }>`
+const StyledLabel = styled.label<{ disabled?: boolean; $backgroundColor?: string }>`
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 8px 12px;
-  background-color: ${({ backgroundColor }) => backgroundColor || '#f0f0f0'};
+
+  background-color: ${({ $backgroundColor }) => $backgroundColor || '#f0f0f0'};
+
   border-radius: 6px;
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
@@ -42,7 +44,7 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
   };
 
   return (
-    <StyledLabel disabled={disabled} backgroundColor={backgroundColor} data-testid="radio-label">
+    <StyledLabel disabled={disabled} $backgroundColor={backgroundColor} data-testid="radio-label">
       <StyledRadio
         type="radio"
         name={name}

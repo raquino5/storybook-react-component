@@ -1,19 +1,19 @@
-import React from "react";
-import styled from "styled-components";
-import type { HeroImageProps } from "./HeroImage.types";
+import React from 'react';
+import styled from 'styled-components';
+import type { HeroImageProps } from './HeroImage.types';
 
-const HeroWrapper = styled.div<{ disabled?: boolean; imageUrl: string }>`
+const HeroWrapper = styled.div<{ disabled?: boolean; $imageUrl: string }>`
   width: 100%;
   height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  background-image: url(${(props) => props.imageUrl});
+  background-image: url(${({ $imageUrl }) => $imageUrl});
   background-size: cover;
   background-position: center;
-  filter: ${(props) => (props.disabled ? "grayscale(100%)" : "none")};
-  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
+  filter: ${({ disabled }) => (disabled ? 'grayscale(100%)' : 'none')};
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   transition: filter 0.3s ease;
 
   @media (max-width: 768px) {
@@ -24,11 +24,7 @@ const HeroWrapper = styled.div<{ disabled?: boolean; imageUrl: string }>`
 const Overlay = styled.div`
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom right,
-    rgba(15, 23, 42, 0.9),
-    rgba(15, 23, 42, 0.6)
-  );
+  background: linear-gradient(to bottom right, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.6));
 `;
 
 const Content = styled.div<{ disabled?: boolean }>`
@@ -37,7 +33,7 @@ const Content = styled.div<{ disabled?: boolean }>`
   text-align: center;
   padding: 0 1.5rem;
   max-width: 720px;
-  opacity: ${(props) => (props.disabled ? 0.7 : 1)};
+  opacity: ${({ disabled }) => (disabled ? 0.7 : 1)};
 `;
 
 const Title = styled.h1`
@@ -76,7 +72,7 @@ export const HeroImage: React.FC<HeroImageProps> = ({
     <HeroWrapper
       data-testid="hero"
       disabled={disabled}
-      imageUrl={imageUrl}
+      $imageUrl={imageUrl}
       onClick={disabled ? undefined : onClick}
     >
       <Overlay />
@@ -88,4 +84,4 @@ export const HeroImage: React.FC<HeroImageProps> = ({
   );
 };
 
-export type { HeroImageProps } from "./HeroImage.types";
+export type { HeroImageProps } from './HeroImage.types';

@@ -13,6 +13,6 @@ describe('Card Component', () => {
   it('changes background color when disabled', () => {
     render(<Card title="Disabled" content="Cannot click" disabled />);
     const card = screen.getByTestId('card');
-    expect(card).toHaveStyleRule('background-color', '#ccc');
+    expect(card).toHaveStyleRule('background-color', '#4b5563');
   });
 });

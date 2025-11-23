@@ -4,12 +4,11 @@ import type { TableProps } from './Table.types';
 
 const StyledTableWrapper = styled.div<{
   disabled?: boolean;
-  backgroundColor?: string;
+  $backgroundColor?: string;
 }>`
   width: 100%;
   overflow-x: auto;
-  background-color: ${({ backgroundColor }) =>
-    backgroundColor || '#020617'}; /* dark default */
+  background-color: ${({ $backgroundColor }) => $backgroundColor || '#020617'};
   padding: 1rem;
   border-radius: 12px;
   border: 1px solid #1f2937;
@@ -58,12 +57,12 @@ export const Table: React.FC<TableProps> = ({
   headers,
   data,
   disabled = false,
-  backgroundColor = '#020617', // dark default
+  backgroundColor = '#020617',
 }) => {
   return (
     <StyledTableWrapper
       disabled={disabled}
-      backgroundColor={backgroundColor}
+      $backgroundColor={backgroundColor}
       data-testid="table-wrapper"
     >
       <StyledTable>

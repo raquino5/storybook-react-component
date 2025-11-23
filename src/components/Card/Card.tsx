@@ -43,11 +43,7 @@ export const Card: React.FC<CardProps> = ({
   children,
 }) => {
   return (
-    <StyledCard
-      data-testid="card"
-      disabled={disabled}
-      bgColor={backgroundColor}
-    >
+    <StyledCard data-testid="card" disabled={disabled} bgColor={backgroundColor}>
       <Title>{title}</Title>
       <Content>{content}</Content>
 
