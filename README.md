@@ -32,7 +32,7 @@ To run the components locally, the following instructions are given:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/raquino_ui_garden.git
+   git clone https://github.com/raquino5/storybook-react-component.git
    cd raquino_ui_garden
 
    ```
