@@ -2,12 +2,17 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import type { TableProps } from './Table.types';
 
-const StyledTableWrapper = styled.div<{ disabled?: boolean; backgroundColor?: string }>`
+const StyledTableWrapper = styled.div<{
+  disabled?: boolean;
+  backgroundColor?: string;
+}>`
   width: 100%;
   overflow-x: auto;
-  background-color: ${({ backgroundColor }) => backgroundColor};
+  background-color: ${({ backgroundColor }) =>
+    backgroundColor || '#020617'}; /* dark default */
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: 12px;
+  border: 1px solid #1f2937;
 
   ${({ disabled }) =>
     disabled &&
@@ -20,16 +25,24 @@ const StyledTableWrapper = styled.div<{ disabled?: boolean; backgroundColor?: st
 const StyledTable = styled.table`
   width: 100%;
   border-collapse: collapse;
+  font-size: 0.9rem;
 
   th,
   td {
-    border: 1px solid #ccc;
-    padding: 0.5rem;
+    border: 1px solid #1f2937;
+    padding: 0.5rem 0.75rem;
     text-align: left;
   }
 
   th {
-    background-color: #f5f5f5;
+    background-color: #020617;
+    color: #e5e7eb;
+    font-weight: 600;
+  }
+
+  td {
+    background-color: #020617;
+    color: #9ca3af;
   }
 
   @media (max-width: 600px) {
@@ -45,7 +58,7 @@ export const Table: React.FC<TableProps> = ({
   headers,
   data,
   disabled = false,
-  backgroundColor = '#ffffff',
+  backgroundColor = '#020617', // dark default
 }) => {
   return (
     <StyledTableWrapper

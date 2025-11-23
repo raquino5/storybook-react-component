@@ -7,7 +7,7 @@ const StyledText = styled.p<
 >`
   font-size: ${({ size }) => (size === 'small' ? '0.8rem' : size === 'large' ? '1.5rem' : '1rem')};
   font-weight: ${({ weight }) => (weight === 'bold' ? 'bold' : 'normal')};
-  color: ${({ disabled, color }) => (disabled ? '#999' : color || '#333')};
+  color: ${({ disabled, color }) => (disabled ? '#999' : color || 'inherit')};
   background-color: ${({ disabled, backgroundColor }) =>
     disabled ? '#ccc' : backgroundColor || 'transparent'};
   text-align: ${({ align }) => align || 'left'};
